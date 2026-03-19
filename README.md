@@ -30,19 +30,19 @@ Paso a paso:
    - El valor actual de cada `Stock` es `shares * price`.
 2. **Recorrer cada símbolo de la asignación objetivo**
    - Para cada `symbol` y su porcentaje `target_pct` en `target_allocation`:
-3. **Validar que exista la posición**
-   - Si `symbol` no está en `positions`, se lanza `AllocationError`.
-4. **Calcular el valor objetivo del activo**
-   - `target_value = total_value * target_pct`
-5. **Calcular el valor actual del activo**
-   - `current_value = positions[symbol].get_value()`
-6. **Calcular la diferencia (lo que falta o sobra)**
-   - `difference = target_value - current_value`
-7. **Decidir BUY / SELL según el signo de la diferencia**
-   - Si `difference > 0`: falta dinero para alcanzar el objetivo ⇒ `BUY[symbol] = difference`
-   - Si `difference < 0`: hay exceso ⇒ `SELL[symbol] = abs(difference)`
-   - Si `difference == 0`: ya está en objetivo ⇒ no se agrega ninguna acción.
-8. **Devolver el resultado**
-   - Se devuelve un diccionario con la forma:
-     - `{"BUY": {...}, "SELL": {...}}`
-   - Los montos están expresados en **dinero** (base dólares), no en cantidad de acciones.
+     3. **Validar que exista la posición**
+        - Si `symbol` no está en `positions`, se lanza `AllocationError`.
+     4. **Calcular el valor objetivo del activo**
+        - `target_value = total_value * target_pct`
+     5. **Calcular el valor actual del activo**
+        - `current_value = positions[symbol].get_value()`
+     6. **Calcular la diferencia (lo que falta o sobra)**
+        - `difference = target_value - current_value`
+     7. **Decidir BUY / SELL según el signo de la diferencia**
+        - Si `difference > 0`: falta dinero para alcanzar el objetivo ⇒ `BUY[symbol] = difference`
+        - Si `difference < 0`: hay exceso ⇒ `SELL[symbol] = abs(difference)`
+        - Si `difference == 0`: ya está en objetivo ⇒ no se agrega ninguna acción.
+     8. **Devolver el resultado**
+        - Se devuelve un diccionario con la forma:
+          - `{"BUY": {...}, "SELL": {...}}`
+        - Los montos están expresados en **dinero** (base dólares), no en cantidad de acciones.
