@@ -4,6 +4,27 @@
 
 Este módulo modela una cartera de acciones y proporciona un mecanismo de reequilibrio basado en una asignación objetivo.
 
+## Forma de uso
+
+- **Instalar dependencias**
+  - (Opcional pero recomendado) Crear y activar un entorno virtual.
+  - Instalar dependencias desde `requirements.txt`:
+    - `pip install -r requirements.txt`
+
+- **Ejecutar los tests**
+  - Desde la raíz del proyecto:
+    - `pytest -q`
+
+- **Ejecutar el ejemplo de uso**
+  - Desde la raíz del proyecto:
+    - `python3 src/main.py`
+  - Este script:
+    - Crea algunas posiciones (`Stock`) con precios y cantidades.
+    - Define una asignación objetivo (`target_allocation`).
+    - Construye un `Portfolio` y muestra:
+      - El valor total de la cartera.
+      - El resultado de `rebalance()` con las acciones `BUY` y `SELL` en dólares.
+
 ## Decisiones de diseño
 
 - Separación de responsabilidades:
